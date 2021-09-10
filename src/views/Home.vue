@@ -1,19 +1,19 @@
 <template>
   <div class="home">
   
-    <HelloWorld />
+    <TheMain />
 
   </div>
 </template>
 
 <script>
 
-import HelloWorld from '@/components/HelloWorld.vue'
+import TheMain from '@/components/TheMain.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    TheMain
   }
 }
 </script>
