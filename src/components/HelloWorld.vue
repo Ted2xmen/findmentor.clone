@@ -41,7 +41,7 @@
     </div>
 
     <div class="row row-cols-1 row-cols-md-3 g-2">
-      <div class="col" v-for="(item, index) in firebaseData" :key="index">
+      <div class="col" v-for="(item, index) in filteredPeople" :key="index">
         <div class="col">
           <div class="card hover morder">
             <div class="row">
@@ -60,7 +60,7 @@
             <div class="card-body">
               <p class="card-text text-muted">
                 {{ item.description }}
-                kategori:   {{ item.category }}
+                kategori: {{ item.category }}
               </p>
               <span class="text-muted"
                 ><span class="badge bg-primary">Primary</span>&nbsp;<span
@@ -75,16 +75,11 @@
       </div>
     </div>
 
-
-
-<!-- <p>
+    <!-- <p>
  test {{firebaseData}}
 </p> -->
 
-
-<!-- test {{selectedCategory}} -->
-
-
+    <!-- test {{selectedCategory}} -->
   </div>
 </template>
 
@@ -96,20 +91,22 @@ import axios from "axios";
 export default {
   name: "HelloWorld",
 
-
   data() {
     return {
-
       firebaseData: [], // firebase'den gelen datayı for ile dönüyor
 
       selectedCategory: "All",
 
-      
+      localData: [
+        { title: "Deneme", description: "front", category: "front" },
+        { title: "Deneme 1", description: "web", category: "Web" },
+        { title: "Deneme 2", description: "mobil", category: "front" },
+        { title: "Deneme 3", description: "web", category: "Entertainment" },
+      ],
     };
   },
 
   computed: {
-
     filteredPeople: function () {
       var vm = this;
       var category = vm.selectedCategory;
@@ -124,8 +121,7 @@ export default {
     },
   },
 
-
-    created() {
+  created() {
     axios
       .get(
         "https://json-5ff41-default-rtdb.europe-west1.firebasedatabase.app/users.json"
@@ -138,10 +134,8 @@ export default {
           this.firebaseData.push(newData);
         }
       });
-  }
-
+  },
 };
-
 </script>
 
 
