@@ -115,12 +115,7 @@ export default {
 
       selectedCategory: "All",
 
-      // localData: [ // example
-      //   { title: "Deneme", description: "front", category: "front" },
-      //   { title: "Deneme 1", description: "web", category: "Web" },
-      //   { title: "Deneme 2", description: "mobil", category: "front" },
-      //   { title: "Deneme 3", description: "web", category: "Entertainment" },
-      // ],
+
     };
   },
 
@@ -145,6 +140,7 @@ export default {
         return item.title
           .toLowerCase()
           .includes(this.searchInput.toLowerCase());
+       
       });
     },
   },
@@ -160,6 +156,7 @@ export default {
           var newData = data[key];
 
           this.firebaseData.push(newData);
+          this.$store.state.list.push(newData);
         }
       });
   },
