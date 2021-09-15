@@ -62,6 +62,32 @@
       </div>
     </form>
 
+
+<h3>Tables</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="(item, index) in filteredSearch" :key="index">
+      <th scope="row">{{index+1}}</th>
+      <td>{{ item.title }}</td>
+      <td> {{ item.description }}</td>
+      <td>{{ item.category }}</td>
+    </tr>
+  
+  </tbody>
+</table>
+ 
+
+<h3>Cards</h3>
+
     <div class="row py-5 row-cols-1 row-cols-md-3 g-2">
       <div class="col" v-for="(item, index) in filteredSearch" :key="index">
         <div class="col">

@@ -8,7 +8,12 @@ export default createStore({
   },
   getters: {
     justWeb: state =>{
+      
       return state.list.filter(item => item.category == "Web")
+
+
+
+
     }
 
   },
