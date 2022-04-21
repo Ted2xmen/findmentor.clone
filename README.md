@@ -1,4 +1,6 @@
-# vue-filter
+# findmentor clone
+
+Bu projeyi geçen sene veri filtrelemeyi öğrenirken hazırlamıştım. findmentor'un verileri json olarak erişilebilir oldugundan böyle bir şey yapmak için güncelledim. 
 
 ## Project setup
 ```
